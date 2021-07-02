@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/assets/styles/promises.css">
+    <link rel="shortcut icon" href="./src/assets/media/dice-icon-transparent.png"/>
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="turn-div">
+        <h2 id="turn-h3">TURN:
+            <br> 
+            <span class="turn-span">Enemy</span>
+        </h3>
+    </div>
+
+    <br>
+
+    <div class="board">
+        
+        <div class="controls" id="player-controls">
+            <div class="stats">
+                <div class="stats-detail-container">
+                    <h1>Health Points: <br><span id="player-health">0</span></h1>
+                    <h2>Damage dealt: <br><span id="damage">0</span></h2>
+                </div>
+                <div class="stats-detail-container">
+                    <button id="tripper">Be a Tripper</button><button id="bull">Be a Bull</button>
+                </div>
+                <div class="stats-detail-container">
+                    <h1>class: <br><span id="player-class-span">Basic Class</span></h1>
+                </div>
+                <div class="stats-detail-container">
+                    <h2>Hits: <br><span id="hits">0</span></h2>
+                    <h2>Misses: <br><span id="misses">0</span></h2>
+                </div>
+                <div class="stats-detail-container">
+                    <h2>Trip Successes: <br><span id="tripSucc">0</span></h2>
+                    <h2>Trip Fails: <br><span id="tripFail">0</span></h2>
+                </div>
+                <div class="stats-detail-container">
+                    <h2>Bull Rush Successes: <br><span id="bullRushSucc">0</span></h2>
+                    <h2>Bull Rush Fails: <br><span id="bullRushFail">0</span></h2>
+                </div>
+            </div>
+    
+            <div class="speed-selector">
+                <label for="land-speed">Character land speed:</label>
+    
+                <select name="speed" id="land-speed">
+                    <option value="">--Please choose an option--</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                
+            </div>
+            <br>
+            <br>
+            <div class="player-buttons">
+                <h2>Player Buttons:</h2>
+                <div class="grid-container">
+                    <button id="attack" class="grid-item">Attack</button>
+                    <button id="trip" class="grid-item">Trip</button>
+                    <button id="bullRush" class="grid-item">Bull Rush</button>
+                    <button id="move-player" class="grid-item">Move</button>
+                    <button id="charge" class="grid-item">Charge</button>
+                </div>
+            </div>
+    
+            <div class="loader" style="display: none;"></div>
+        </div>
+        
+        <div class="grid">
+
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+        </div>
+    
+        <div class="controls" id="enemy-controls">
+            <div class="enemy-stats">
+                <div class="stats-detail-container">
+                    <h1>Health Points: <br><span id="enemy-health">0</span></h1>
+                    <h2>Damage dealt: <br><span id="damageTaken">0</span></h2>
+                </div>
+                <div class="stats-detail-container">
+                    <button id="enemy-tripper">Be a Tripper</button><button id="enemy-bull">Be a Bull</button>
+                </div>
+                <div class="stats-detail-container">
+                    <h1>class: <br><span id="enemy-class-span">Basic Class</span></h1>
+                </div>
+                <div class="stats-detail-container">
+                    <h2>Hits: <br><span id="enemyHits">0</span></h2>
+                    <h2>Misses: <br><span id="enemyMisses">0</span></h2>
+                </div>
+                <div class="stats-detail-container">
+                    <h2>Trip Successes: <br><span id="enemyTripSucc">0</span></h2>
+                    <h2>Trip Fails: <br><span id="enemyTripFail">0</span></h2>
+                </div>
+                <div class="stats-detail-container">
+                    <h2>Bull Rush Successes: <br><span id="enemyBullRushSucc">0</span></h2>
+                    <h2>Bull Rush Fails: <br><span id="enemyBullRushFail">0</span></h2>
+                </div>
+            </div>
+    
+            <div class="enemy-speed-selector">
+                <label for="enemy-land-speed">Enemy land speed:</label>
+    
+                <select name="speed" id="enemy-land-speed">
+                    <option value="">--Please choose an option--</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+    
+            <br>
+            <br>
+    
+            <div class="enemy-buttons">
+                <h2>Enemy Buttons:</h2>
+                <div class="grid-container">
+                    <button id="enemy-attack" class="grid-item">Attack</button>
+                    <button id="enemy-trip" class="grid-item">Trip</button>
+                    <button id="enemy-bullRush" class="grid-item">Bull Rush</button>
+                    <button id="move-enemy" class="grid-item">Move</button>
+                    <button id="enemy-charge" class="grid-item">Charge</button>
+                </div>
+            </div>
+    
+        </div>
+        
+    </div>
+</div>
+<div class="loader" style="display: none;"></div>
+
+
+
+    <script src="./src/promises.js"></script>
+</body>
+</html>
