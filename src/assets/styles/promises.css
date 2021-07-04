@@ -24,10 +24,11 @@ body {
     display: flex;
     justify-content: space-around;
 }
-span {
+.stats__counter, .turn-span {
     /* background-color: red; */
     background-image: url('../media/pngaaa.com-402517.png');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: inline-block;
     width: 4vw;
     height: 4vw;
@@ -56,7 +57,7 @@ img {
 select {
     background-color: #000;
     border: none;
-    
+    color: rgb(255,70,85);
 }
 option {
     color: #fff;
