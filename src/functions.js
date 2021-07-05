@@ -591,11 +591,11 @@ async function toggleLoader() {
         if (turn) {
             turn = false;
             whoseTurn();
-            turnSpan.innerText = whoseTurn();
+            turnDiv.innerText = whoseTurn();
         } else {
             turn = true;
             whoseTurn();
-            turnSpan.innerText = whoseTurn();
+            turnDiv.innerText = whoseTurn();
         }
     }
 }
@@ -666,7 +666,7 @@ function conditions(td, i, j, curPlayer, curOpponent) {
                 // curPlayer = i;
                 if ( !inDangerZone(playerPosition, enemyPosition) ) {
                     turn = false;
-                    turnSpan.innerText = whoseTurn();
+                    turnDiv.innerText = whoseTurn();
                     // console.log('nie jest w strefie zagrożenia')
                 }
                 isInDanger()
@@ -692,7 +692,7 @@ function conditions(td, i, j, curPlayer, curOpponent) {
 
                 if ( !inDangerZone(enemyPosition, playerPosition) ) {
                     turn = true;
-                    turnSpan.innerText = whoseTurn();
+                    turnDiv.innerText = whoseTurn();
                     // console.log('nie jest w strefie zagrożenia')
                 }
                 // curPlayer = i;

@@ -266,7 +266,7 @@ enemySide.addEventListener('takesDamage', () => {
 
 setBattlefield();
 flipCoin();
-turnSpan.innerText = whoseTurn();
+turnDiv.innerText = whoseTurn();
 
 
 // locatePcOnGrid(playerPosition, enemyPosition);

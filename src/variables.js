@@ -62,7 +62,7 @@ let enemyBullRushFail = document.querySelector("#enemyBullRushFail");
 
 // flipCoin();
 
-let turnSpan = document.querySelector('.turn-span');
+let turnDiv = document.querySelector('#turn-h2');
 
 
 

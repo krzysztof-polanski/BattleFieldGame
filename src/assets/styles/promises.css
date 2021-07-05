@@ -1,8 +1,8 @@
 body {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Cinzel', serif;
     height: 100%;
     font-size: 0.9rem;
-    font-weight: 900;
+    font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
     margin: 10px 0;
@@ -12,9 +12,11 @@ body {
     justify-content: space-around;
     flex-direction: column;
 }
-.turn-div {
+.turn-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 #turn-h3 {
     width: max-content;
@@ -24,7 +26,7 @@ body {
     display: flex;
     justify-content: space-around;
 }
-.stats__counter, .turn-span {
+.stats__counter, .turn-div {
     /* background-color: red; */
     background-image: url('../media/pngaaa.com-402517.png');
     background-size: contain;
@@ -35,7 +37,18 @@ body {
     text-align: center;
     vertical-align: middle;
 }
-
+.stats__counter h2, #turn-h2 {
+    color: #f3f3f3;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.stats-detail-container__holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+}
 td {
     font-size: small;
     padding: 0;
@@ -55,12 +68,20 @@ img {
 }
 
 select {
-    background-color: #000;
-    border: none;
-    color: rgb(255,70,85);
+    /* background-color: rgb(199, 179, 179); */
+    border: 1px solid #350f0d;
+    color: rgb(54, 26, 29);
+    margin-top: 40px;
+}
+select:hover {
+    box-shadow: 0 0 10px #da190b;
+    transition: 450ms;
+}
+select:not(:hover) {
+    transition: 450ms;
 }
 option {
-    color: #fff;
+    color: rgb(255,70,85);
 }
 .stats-detail-container button {
         width: 40%;
@@ -68,24 +89,29 @@ option {
 button {
     /* width: 40%; */
     /* max-width: 240px; */
+    font-family: 'Cinzel', serif;
     height: 54px;
     padding: 8px;
     font-size: 0.8rem;
     font-weight: 900;
-    color: rgb(255,70,85);
-    background-color: black;
+    color: rgb(54, 26, 29);
+    /* background-color: black; */
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
+    /* box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3); */
     position: relative;
-    margin: 10px 0;
+    margin: 10px 10px;
+    transition: 450ms;
 }
 button:hover {
-    color: rgb(236, 232, 225);
+    color: rgb(167, 49, 59);
+    box-shadow: 0 0 10px #da190b;
 }
+
 button:disabled {
-    color: rgba(255,70,85,0.2);
+    box-shadow: none;
+    color: rgba(44, 29, 31, 0.2);
 }
 .red-background {
     background-color: #da190b;
@@ -105,8 +131,8 @@ button:disabled {
 }
   
 @keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .controls {
@@ -126,10 +152,10 @@ button:disabled {
     height: 4vw; */
 }
 
-h1, .stats-detail-container h2 {
+/* .stats-detail-container h2 {
     width: 35%;
     vertical-align: middle;
-}
+} */
 
 .grid-container {
     display: grid;

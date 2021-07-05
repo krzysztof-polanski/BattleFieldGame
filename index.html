@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/assets/styles/promises.css">
     <link rel="shortcut icon" href="./src/assets/media/dice-icon-transparent.png"/>
     <title>Document</title>
 </head>
 <body>
 <div class="container">
-    <div class="turn-div">
-        <h2 id="turn-h3">TURN:
-            <br> 
-            <div class="turn-span">Enemy</div>
-        </h2>
+    <div class="turn-container">
+        <h1 id="turn-h3">TURN:</h1>
+        <div class="turn-div"><h1 id="turn-h2">Enemy</h1></div>
     </div>
 
     <br>
@@ -25,52 +26,52 @@
         <div class="controls" id="player-controls">
             <div class="stats">
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h1>Health Points:</h1>
-                        <div id="player-health" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="player-health">0</h2></div>
                     </div>
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h1>Damage dealt:</h1>
-                        <div id="damage" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="damage">0</h2></div>
                     </div>
                 </div>
                 <div class="stats-detail-container">
                     <button id="tripper">Be a Tripper</button><button id="bull">Be a Bull</button>
                 </div>
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h1>class:</h1>
-                        <div id="player-class-div" class="stats__counter">Basic Class</div>
+                        <div class="stats__counter"><h2 id="player-class-div">Basic Class</h2></div>
                     </div>
                 </div>
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Hits:</h2>
-                        <div id="hits" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="hits">0</h2></div>
                     </div>
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Misses:</h2>
-                        <div id="misses" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="misses">0</h2></div>
                     </div>
                 </div>
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Trip Successes:</h2>
-                        <div id="tripSucc" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="tripSucc">0</h2></div>
                     </div>
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Trip Fails:</h2>
-                        <div id="tripFail" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="tripFail">0</h2></div>
                     </div>
                 </div>
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Bull Rush Successes:</h2>
-                        <div id="bullRushSucc" class="stats__counter">0</div>
-                    </div>
-                    <div>
+                        <div class="stats__counter"><h2 id="bullRushSucc">0</h2></div>
+                    </div class="stats-detail-container__holder">
+                    <div class="stats-detail-container__holder">
                         <h2>Bull Rush Fails:</h2>
-                        <div id="bullRushFail" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="bullRushFail">0</h2></div>
                     </div>
                 </div>
             </div>
@@ -116,52 +117,52 @@
         <div class="controls" id="enemy-controls">
             <div class="enemy-stats">
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h1>Health Points:</h1>
-                        <div id="enemy-health" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="enemy-health">0</h2></div>
                     </div>
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h1>Damage dealt:</h1>
-                        <div id="damageTaken" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="damageTaken">0</h2></div>
                     </div>
                 </div>
                 <div class="stats-detail-container">
                     <button id="enemy-tripper">Be a Tripper</button><button id="enemy-bull">Be a Bull</button>
                 </div>
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h1>class:</h1>
-                        <div id="enemy-class-div" class="stats__counter">Basic Class</div>
+                        <div class="stats__counter"><h2 id="enemy-class-div">Basic Class</h2></div>
                     </div>
                 </div>
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Hits:</h2>
-                        <div id="enemyHits" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="enemyHits">0</h2></div>
                     </div>
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Misses:</h2>
-                        <div id="enemyMisses" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="enemyMisses">0</h2></div>
                     </div>
                 </div>
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Trip Successes:</h2>
-                        <div id="enemyTripSucc" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="enemyTripSucc">0</h2></div>
                     </div>
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Trip Fails:</h2>
-                        <div id="enemyTripFail" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="enemyTripFail">0</h2></div>
                     </div>
                 </div>
                 <div class="stats-detail-container">
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Bull Rush Successes:</h2>
-                        <div id="enemyBullRushSucc" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="enemyBullRushSucc">0</h2></div>
                     </div>
-                    <div>
+                    <div class="stats-detail-container__holder">
                         <h2>Bull Rush Fails:</h2>
-                        <div id="enemyBullRushFail" class="stats__counter">0</div>
+                        <div class="stats__counter"><h2 id="enemyBullRushFail">0</h2></div>
                     </div>
                 </div>
             </div>
