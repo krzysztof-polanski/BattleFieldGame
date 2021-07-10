@@ -143,7 +143,7 @@ function setBattlefield(){
     }
 
     
-    tds[enemyPosition].innerHTML = '<img src="../src/assets/media/enemy.jpg">';
+    tds[enemyPosition].innerHTML = '<img src="./src/assets/media/enemy.jpg">';
     
     let positionOfOpp = tds[enemyPosition].getBoundingClientRect();
 
@@ -152,7 +152,7 @@ function setBattlefield(){
     let oppBottom = positionOfOpp.bottom;
     let oppLeft = positionOfOpp.left;
 
-    tds[playerPosition].innerHTML = '<img src="../src/assets/media/Cart-Hero.png">';
+    tds[playerPosition].innerHTML = '<img src="./src/assets/media/Cart-Hero.png">';
 
     let positionOfPC = tds[playerPosition].getBoundingClientRect();
 
@@ -224,8 +224,8 @@ function reSetFigures(player, opponent){
         td.style.color = 'unset';
         td.style.backgroundColor = '#F9F9F9';
     }
-        tds[opponent].innerHTML = '<img src="../src/assets/media/enemy.jpg">';
-        tds[player].innerHTML = '<img src="../src/assets/media/Cart-Hero.png">';
+        tds[opponent].innerHTML = '<img src="./src/assets/media/enemy.jpg">';
+        tds[player].innerHTML = '<img src="./src/assets/media/Cart-Hero.png">';
 }
 
 function reSetBattlefield(){
@@ -236,8 +236,8 @@ function reSetBattlefield(){
         td.style.backgroundColor = '#F9F9F9';
         
     }
-        tds[enemyPosition].innerHTML = '<img src="../src/assets/media/enemy.jpg">';
-        tds[playerPosition].innerHTML = '<img src="../src/assets/media/Cart-Hero.png">';
+        tds[enemyPosition].innerHTML = '<img src="./src/assets/media/enemy.jpg">';
+        tds[playerPosition].innerHTML = '<img src="./src/assets/media/Cart-Hero.png">';
         
 }
 
