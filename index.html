@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/assets/styles/promises.css">
     <link rel="shortcut icon" href="./src/assets/media/dice-icon-transparent.png"/>
     <title>Document</title>
 </head>
 <body>
 <div class="container">
-    <div class="turn-div">
-        <h2 id="turn-h3">TURN:
-            <br> 
-            <span class="turn-span">Enemy</span>
-        </h3>
+    <div class="turn-container">
+        <h1 id="turn-h3">TURN:</h1>
+        <div class="turn-div"><h1 id="turn-h2">Enemy</h1></div>
     </div>
 
     <br>
@@ -25,26 +26,53 @@
         <div class="controls" id="player-controls">
             <div class="stats">
                 <div class="stats-detail-container">
-                    <h1>Health Points: <br><span id="player-health">0</span></h1>
-                    <h2>Damage dealt: <br><span id="damage">0</span></h2>
+                    <div class="stats-detail-container__holder">
+                        <h1>Health Points:</h1>
+                        <div class="stats__counter"><h2 id="player-health">0</h2></div>
+                    </div>
+                    <div class="stats-detail-container__holder">
+                        <h1>Damage dealt:</h1>
+                        <div class="stats__counter"><h2 id="damage">0</h2></div>
+                    </div>
                 </div>
                 <div class="stats-detail-container">
                     <button id="tripper">Be a Tripper</button><button id="bull">Be a Bull</button>
                 </div>
                 <div class="stats-detail-container">
-                    <h1>class: <br><span id="player-class-span">Basic Class</span></h1>
+                    <div class="stats-detail-container__holder">
+                        <h1>class:</h1>
+                        <div class="stats__counter"><h2 id="player-class-div">Basic Class</h2></div>
+                    </div>
                 </div>
                 <div class="stats-detail-container">
-                    <h2>Hits: <br><span id="hits">0</span></h2>
-                    <h2>Misses: <br><span id="misses">0</span></h2>
+                    <div class="stats-detail-container__holder">
+                        <h2>Hits:</h2>
+                        <div class="stats__counter"><h2 id="hits">0</h2></div>
+                    </div>
+                    <div class="stats-detail-container__holder">
+                        <h2>Misses:</h2>
+                        <div class="stats__counter"><h2 id="misses">0</h2></div>
+                    </div>
                 </div>
                 <div class="stats-detail-container">
-                    <h2>Trip Successes: <br><span id="tripSucc">0</span></h2>
-                    <h2>Trip Fails: <br><span id="tripFail">0</span></h2>
+                    <div class="stats-detail-container__holder">
+                        <h2>Trip Successes:</h2>
+                        <div class="stats__counter"><h2 id="tripSucc">0</h2></div>
+                    </div>
+                    <div class="stats-detail-container__holder">
+                        <h2>Trip Fails:</h2>
+                        <div class="stats__counter"><h2 id="tripFail">0</h2></div>
+                    </div>
                 </div>
                 <div class="stats-detail-container">
-                    <h2>Bull Rush Successes: <br><span id="bullRushSucc">0</span></h2>
-                    <h2>Bull Rush Fails: <br><span id="bullRushFail">0</span></h2>
+                    <div class="stats-detail-container__holder">
+                        <h2>Bull Rush Successes:</h2>
+                        <div class="stats__counter"><h2 id="bullRushSucc">0</h2></div>
+                    </div class="stats-detail-container__holder">
+                    <div class="stats-detail-container__holder">
+                        <h2>Bull Rush Fails:</h2>
+                        <div class="stats__counter"><h2 id="bullRushFail">0</h2></div>
+                    </div>
                 </div>
             </div>
     
@@ -52,7 +80,7 @@
                 <label for="land-speed">Character land speed:</label>
     
                 <select name="speed" id="land-speed">
-                    <option value="">--Please choose an option--</option>
+                    <option value="" disabled>--Please choose your speed--</option>
                     <option value="1">1</option>
                     <option value="2" selected>2</option>
                     <option value="3">3</option>
@@ -68,167 +96,74 @@
             <br>
             <div class="player-buttons">
                 <h2>Player Buttons:</h2>
-                <div class="grid-container">
-                    <button id="attack" class="grid-item">Attack</button>
-                    <button id="trip" class="grid-item">Trip</button>
-                    <button id="bullRush" class="grid-item">Bull Rush</button>
-                    <button id="move-player" class="grid-item">Move</button>
-                    <button id="charge" class="grid-item">Charge</button>
+                <div class="buttons__container">
+                    <button id="attack" class="btn btn-control">Attack</button>
+                    <button id="trip" class="btn btn-control">Trip</button>
+                    <button id="bullRush" class="btn btn-control">Bull Rush</button>
+                    <button id="move-player" class="btn btn-control">Move</button>
+                    <button id="charge" class="btn btn-control">Charge</button>
                 </div>
             </div>
     
             <div class="loader" style="display: none;"></div>
         </div>
-        
-        <div class="grid">
 
-                <table>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-        </div>
+
+
+        <div class="grid"><table id="grid-rendered"></table></div>
+
+
     
         <div class="controls" id="enemy-controls">
             <div class="enemy-stats">
                 <div class="stats-detail-container">
-                    <h1>Health Points: <br><span id="enemy-health">0</span></h1>
-                    <h2>Damage dealt: <br><span id="damageTaken">0</span></h2>
+                    <div class="stats-detail-container__holder">
+                        <h1>Health Points:</h1>
+                        <div class="stats__counter"><h2 id="enemy-health">0</h2></div>
+                    </div>
+                    <div class="stats-detail-container__holder">
+                        <h1>Damage dealt:</h1>
+                        <div class="stats__counter"><h2 id="damageTaken">0</h2></div>
+                    </div>
                 </div>
                 <div class="stats-detail-container">
                     <button id="enemy-tripper">Be a Tripper</button><button id="enemy-bull">Be a Bull</button>
                 </div>
                 <div class="stats-detail-container">
-                    <h1>class: <br><span id="enemy-class-span">Basic Class</span></h1>
+                    <div class="stats-detail-container__holder">
+                        <h1>class:</h1>
+                        <div class="stats__counter"><h2 id="enemy-class-div">Basic Class</h2></div>
+                    </div>
                 </div>
                 <div class="stats-detail-container">
-                    <h2>Hits: <br><span id="enemyHits">0</span></h2>
-                    <h2>Misses: <br><span id="enemyMisses">0</span></h2>
+                    <div class="stats-detail-container__holder">
+                        <h2>Hits:</h2>
+                        <div class="stats__counter"><h2 id="enemyHits">0</h2></div>
+                    </div>
+                    <div class="stats-detail-container__holder">
+                        <h2>Misses:</h2>
+                        <div class="stats__counter"><h2 id="enemyMisses">0</h2></div>
+                    </div>
                 </div>
                 <div class="stats-detail-container">
-                    <h2>Trip Successes: <br><span id="enemyTripSucc">0</span></h2>
-                    <h2>Trip Fails: <br><span id="enemyTripFail">0</span></h2>
+                    <div class="stats-detail-container__holder">
+                        <h2>Trip Successes:</h2>
+                        <div class="stats__counter"><h2 id="enemyTripSucc">0</h2></div>
+                    </div>
+                    <div class="stats-detail-container__holder">
+                        <h2>Trip Fails:</h2>
+                        <div class="stats__counter"><h2 id="enemyTripFail">0</h2></div>
+                    </div>
                 </div>
                 <div class="stats-detail-container">
-                    <h2>Bull Rush Successes: <br><span id="enemyBullRushSucc">0</span></h2>
-                    <h2>Bull Rush Fails: <br><span id="enemyBullRushFail">0</span></h2>
+                    <div class="stats-detail-container__holder">
+                        <h2>Bull Rush Successes:</h2>
+                        <div class="stats__counter"><h2 id="enemyBullRushSucc">0</h2></div>
+                    </div>
+                    <div class="stats-detail-container__holder">
+                        <h2>Bull Rush Fails:</h2>
+                        <div class="stats__counter"><h2 id="enemyBullRushFail">0</h2></div>
+                    </div>
                 </div>
             </div>
     
@@ -236,7 +171,7 @@
                 <label for="enemy-land-speed">Enemy land speed:</label>
     
                 <select name="speed" id="enemy-land-speed">
-                    <option value="">--Please choose an option--</option>
+                    <option value="" disabled>--Please choose your speed--</option>
                     <option value="1">1</option>
                     <option value="2" selected>2</option>
                     <option value="3">3</option>
@@ -253,12 +188,12 @@
     
             <div class="enemy-buttons">
                 <h2>Enemy Buttons:</h2>
-                <div class="grid-container">
-                    <button id="enemy-attack" class="grid-item">Attack</button>
-                    <button id="enemy-trip" class="grid-item">Trip</button>
-                    <button id="enemy-bullRush" class="grid-item">Bull Rush</button>
-                    <button id="move-enemy" class="grid-item">Move</button>
-                    <button id="enemy-charge" class="grid-item">Charge</button>
+                <div class="buttons__container">
+                    <button id="enemy-attack" class="btn btn-control">Attack</button>
+                    <button id="enemy-trip" class="btn btn-control">Trip</button>
+                    <button id="enemy-bullRush" class="btn btn-control">Bull Rush</button>
+                    <button id="move-enemy" class="btn btn-control">Move</button>
+                    <button id="enemy-charge" class="btn btn-control">Charge</button>
                 </div>
             </div>
     
@@ -270,6 +205,9 @@
 
 
 
-    <script src="./src/promises.js"></script>
+<script src="./src/onLoad.js"></script>
+<script src="./src/variables.js"></script>
+<script src="./src/functions.js"></script>
+    <script src="./src/main.js"></script>
 </body>
 </html>
