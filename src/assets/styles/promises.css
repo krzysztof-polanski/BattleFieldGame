@@ -1,3 +1,7 @@
+
+
+
+
 body {
     font-family: 'Cinzel', serif;
     height: 100%;
@@ -87,12 +91,13 @@ option {
         width: 40%;
 }
 button {
-    /* width: 40%; */
-    /* max-width: 240px; */
+    width: 100%;
+    /* border: hidden; */
+    max-width: 100%;
     font-family: 'Cinzel', serif;
     height: 54px;
-    padding: 8px;
-    font-size: 0.8rem;
+    /* padding: 0; */
+    font-size: 0.8vw;
     font-weight: 900;
     color: rgb(54, 26, 29);
     /* background-color: black; */
@@ -101,17 +106,22 @@ button {
     text-decoration: none;
     /* box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3); */
     position: relative;
-    margin: 10px 10px;
+    margin: 1%;
     transition: 450ms;
+    box-sizing: border-box;
 }
 button:hover {
-    color: rgb(167, 49, 59);
     box-shadow: 0 0 10px #da190b;
+    color: rgb(167, 49, 59);
+    font-size: 1vw;
+    letter-spacing: 0.1vw;
 }
 
 button:disabled {
-    box-shadow: none;
     color: rgba(44, 29, 31, 0.2);
+    box-shadow: none;
+    font-size: 0.8vw;
+    letter-spacing: initial;
 }
 .red-background {
     background-color: #da190b;
@@ -157,17 +167,16 @@ button:disabled {
     vertical-align: middle;
 } */
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    /* align-content: center; */
-}
-#attack, #enemy-attack, #bullRush, #enemy-bullRush {
-    grid-column: 1;
-}
-#trip, #enemy-trip, #move-player, #move-enemy {
-    grid-column: 2;
+.buttons__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 #charge, #enemy-charge {
-    grid-column: 1 / 3;
+    /* grid-column: 1 / 3; */
+    width: 100%;
+}
+.btn-control {
+    /* grid-column: 1; */
+    width: 48%;
 }

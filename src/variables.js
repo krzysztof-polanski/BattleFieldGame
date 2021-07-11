@@ -116,8 +116,3 @@ let landSpeed = +(landSpeedSelector.value);
 let enemyLandSpeedSelector = document.querySelector("#enemy-land-speed");
 let enemyLandSpeed = +(enemyLandSpeedSelector.value);
 let intervalId;
-
-
-
-
-

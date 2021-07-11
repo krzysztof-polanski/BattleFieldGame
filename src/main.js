@@ -892,5 +892,3 @@ const move = async (squares, player, opponent) => {
 
     }
 }
-
-
